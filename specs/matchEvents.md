@@ -1,16 +1,16 @@
 ## Shared parameters
 Parameters that should be included in the definition of every match event
 
-| Parameter | Type | Required? | |
-|-----------|------|-----------|-|
-| match | string | true | ID of the match this event relates to
-| eventType | string | true | Identifies the event type
-| timestamp | datetime | true | The time that the match event occured
+ Parameter | Type | Required? | 
+-----------|------|-----------|-
+match | string | true | ID of the match this event relates to
+eventType | string | true | Identifies the event type
+timestamp | datetime | true | The time that the match event occured
 
 ## Dot balls and runs
-| Parameter | Type | Required? | |
-|-----------|------|-----------|-|
-| runs | int | false | The number of runs successfully taken by a batting side. Defaults to 0 which is a dot ball
+ Parameter | Type | Required? | 
+-----------|------|-----------|-
+runs | int | false | The number of runs successfully taken by a batting side. Defaults to 0 which is a dot ball
 
 ```javascript
 {
@@ -23,10 +23,10 @@ Parameters that should be included in the definition of every match event
 
 ## Extras
 
-| Parameter | Type | Required? | |
-|-----------|------|-----------|-|
-| eventType | string | true | noBall, wide, bye, legBye
-| runs | int | false | The number of runs successfully taken by a batting side during that extra. Defaults to 0
+ Parameter | Type | Required? | 
+-----------|------|-----------|-
+ eventType | string | true | noBall, wide, bye, legBye
+runs | int | false | The number of runs successfully taken by a batting side during that extra. Defaults to 0
 
 ```javascript
 {
@@ -38,9 +38,9 @@ Parameters that should be included in the definition of every match event
 ```
 
 ## Penalty runs
-| Parameter | Type | Required? | |
-|-----------|------|-----------|-|
-| runs | int | false | The number of runs awarded to the batting side. Defaults to 5
+ Parameter | Type | Required? | 
+-----------|------|-----------|-
+runs | int | false | The number of runs awarded to the batting side. Defaults to 5
 
 ```javascript
 {
@@ -71,9 +71,9 @@ Parameters that should be included in the definition of every match event
 ```
 
 ## Caught
-| Parameter | Type | Required? | |
-|-----------|------|-----------|-|
-| didCross | bool | false | Whether or not the batsmen crossed before the catch was taken. Defaults to false
+ Parameter | Type | Required? | 
+-----------|------|-----------|-
+didCross | bool | false | Whether or not the batsmen crossed before the catch was taken. Defaults to false
 
 ```javascript
 {
@@ -130,9 +130,9 @@ Parameters that should be included in the definition of every match event
 ```
 
 ## Run out
-| Parameter | Type | Required? | |
-|-----------|------|-----------|-|
-| runs | int | false | The number of runs successfully taken by a batting side before the runout. Defaults to 0 which is a run out attempting a single
+ Parameter | Type | Required? | 
+-----------|------|-----------|-
+runs | int | false | The number of runs successfully taken by a batting side before the runout. Defaults to 0 which is a run out attempting a single
 
 ```javascript
 {
