@@ -124,6 +124,7 @@ batsman | object | true | The name and id of the batsman that was timed out
  Parameter | Type | Required? | 
 -----------|------|-----------|----------
 didCross | bool | false | Whether or not the batsmen crossed before the catch was taken. Defaults to false
+fielder | object | false | The name and id of the fielder that caught the ball
 
 ```javascript
 {
@@ -144,6 +145,10 @@ didCross | bool | false | Whether or not the batsmen crossed before the catch wa
 	bowler: {
 		id: '6708581a-9c92-4edb-84d2-b83d31b9a8ab',
 		name: 'Shane E Bond'
+	},
+	fielder: {
+		id: 'b1a44166-4b65-4985-991a-9f9e784bcfa4',
+		name: 'Mark Richardson'
 	}
 }
 ```
@@ -261,6 +266,8 @@ batsman | object | true | The name and id of the batsman that was timed out
  Parameter | Type | Required? | 
 -----------|------|-----------|----------
 runs | int | false | The number of runs successfully taken by a batting side before the runout. Defaults to 0 which is a run out attempting a single
+fielder | object | false | The name and id of the fielder that caused the runout
+
 
 ```javascript
 {
@@ -281,11 +288,19 @@ runs | int | false | The number of runs successfully taken by a batting side bef
 	bowler: {
 		id: '6708581a-9c92-4edb-84d2-b83d31b9a8ab',
 		name: 'Shane E Bond'
+	},
+	fielder: {
+		id: 'b1a44166-4b65-4985-991a-9f9e784bcfa4',
+		name: 'Mark Richardson'
 	}
 }
 ```
 
 ## Stumped
+ Parameter | Type | Required? | 
+-----------|------|-----------|----------
+fielder | object | false | The name and id of the wicketkeeper that performed the stumping
+
 ```javascript
 {
 	match: '1fcf3f76-2cb6-4d69-8b1b-119af72df810',
@@ -304,6 +319,10 @@ runs | int | false | The number of runs successfully taken by a batting side bef
 	bowler: {
 		id: '6708581a-9c92-4edb-84d2-b83d31b9a8ab',
 		name: 'Shane E Bond'
+	},
+	fielder: {
+		id: 'b1a44166-4b65-4985-991a-9f9e784bcfa4',
+		name: 'Brendan J McCullum'
 	}
 }
 ```
