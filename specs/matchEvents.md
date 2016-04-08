@@ -1,7 +1,7 @@
 ## Shared parameters
 Parameters that are common across many different match events
 
- Parameter | Type | Required? | 
+ Parameter | Type | Required? | |
 -----------|------|-----------|----------
 match | string | true | id of the match this event relates to
 eventType | string | true | Identifies the event type
@@ -11,7 +11,7 @@ bowler | object | false | The name and id of the bowler
 ### Batsmen
 Describes the two batsmen that are at the crease and is required object for many match events
 
- Parameter | Type | Required? | 
+ Parameter | Type | Required? | |
 -----------|------|-----------|----------
 striker | object | true | The name and id of the batsman on strike
 nonStriker | object | true | The name and id of the batsman off strike
@@ -32,7 +32,7 @@ nonStriker | object | true | The name and id of the batsman off strike
 ### Ball
 Describes which ball in the game a match event relates to
 
- Parameter | Type | Required? | 
+ Parameter | Type | Required? | |
 -----------|------|-----------|----------
 battingTeam | object | true | The id and the name of the team who are batting
 fieldingTeam | object | true | The id and the name of the team who are fielding
@@ -57,7 +57,7 @@ ball | int | true | The ball number in this over. Excluding any extras bowled. N
 ```
 
 ## Dot balls and runs
- Parameter | Type | Required? | 
+ Parameter | Type | Required? | |
 -----------|------|-----------|----------
 runs | int | false | The number of runs successfully taken by a batting side. Defaults to 0 which is a dot ball
 
@@ -99,7 +99,7 @@ runs | int | false | The number of runs successfully taken by a batting side. De
 
 ## Extras (No ball, Wide, Bye and Leg byes)
 
- Parameter | Type | Required? | 
+ Parameter | Type | Required? | |
 -----------|------|-----------|----------
  eventType | string | true | noBall, wide, bye, legBye
 runs | int | false | The number of runs successfully taken by a batting side during that extra. Defaults to 0
@@ -188,7 +188,7 @@ runs | int | false | The number of runs successfully taken by a batting side dur
 ```
 
 ## Timed out
- Parameter | Type | Required? | 
+ Parameter | Type | Required? | |
 -----------|------|-----------|----------
 batsman | object | true | The name and id of the batsman that was timed out
 
@@ -205,7 +205,7 @@ batsman | object | true | The name and id of the batsman that was timed out
 ```
 
 ## Caught
- Parameter | Type | Required? | 
+ Parameter | Type | Required? | |
 -----------|------|-----------|----------
 didCross | bool | false | Whether or not the batsmen crossed before the catch was taken. Defaults to false
 fielder | object | false | The name and id of the fielder that caught the ball
@@ -395,7 +395,7 @@ fielder | object | false | The name and id of the fielder that caught the ball
 ```
 
 ## Obstructing the field
- Parameter | Type | Required? | 
+ Parameter | Type | Required? | |
 -----------|------|-----------|----------
 batsman | object | true | The name and id of the batsman that was timed out
 
@@ -425,7 +425,7 @@ batsman | object | true | The name and id of the batsman that was timed out
 ```
 
 ## Run out
- Parameter | Type | Required? | 
+ Parameter | Type | Required? | |
 -----------|------|-----------|----------
 runs | int | false | The number of runs successfully taken by a batting side before the runout. Defaults to 0 which is a run out attempting a single
 batsman | object | true | The name and id of the batsman that was run out
@@ -477,7 +477,7 @@ fielder | object | false | The name and id of the fielder that caused the runout
 ```
 
 ## Stumped
- Parameter | Type | Required? | 
+ Parameter | Type | Required? | |
 -----------|------|-----------|----------
 fielder | object | false | The name and id of the wicketkeeper that performed the stumping
 
