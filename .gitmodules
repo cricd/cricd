@@ -1,0 +1,3 @@
+[submodule "entities"]
+	path = entities
+	url = git@github.com:bradleyscott/cricd-entities
