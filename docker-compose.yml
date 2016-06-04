@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  entities:
+    image: bradleyscott/cricd-entities
+    ports:
+      - "1337:1337"
+  batsman-innings-processor:
+    image: bradleyscott/cricd-batsman-innings-processor
+    ports:
+      - "3000:3000"
+    depends_on:
+      - eventstore-projections
+  eventstore-projections:
+    build: ./eventstore
+    depends_on:
+      - eventstore
+  eventstore:
+    image: adbrowne/eventstore
+    ports:
+      - "2113:2113"
+      - "1113:1113"
