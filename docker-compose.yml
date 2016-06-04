@@ -3,10 +3,25 @@ version: '2'
 services:
   entities:
     image: bradleyscott/cricd-entities
+    restart: on-failure:10
+    environment:
+      - sails_connections__cricdPostgressqlServer__host=entities-db
+      - sails_connections__cricdPostgressqlServer__password=password # Override in production deployments
     ports:
       - "1337:1337"
+    depends_on:
+      - entities-db
+  entities-db:
+    image: postgres
+    restart: on-failure:10
+    environment:
+      - POSTGRES_PASSWORD=password # Override in production deployments
+      - POSTGRES_DB=cricd-entities
+    ports:
+      - "5432:5432"
   batsman-innings-processor:
     image: bradleyscott/cricd-batsman-innings-processor
+    restart: on-failure:10
     ports:
       - "3000:3000"
     depends_on:
@@ -17,6 +32,7 @@ services:
       - eventstore
   eventstore:
     image: adbrowne/eventstore
+    restart: on-failure:10
     ports:
       - "2113:2113"
       - "1113:1113"
