@@ -27,7 +27,7 @@ services:
     depends_on:
       - eventstore-projections
   eventstore-projections:
-    build: ./eventstore
+    build: ./api/eventstore
     depends_on:
       - eventstore
   eventstore:
