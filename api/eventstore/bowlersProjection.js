@@ -1,6 +1,6 @@
 fromStream('cricket_events_v1')
 .when({
     'cricket_event' : function(state ,event) {
-        linkTo('cricd-match-' + event.data.match, event);
+      if(event.data.bowler.id) linkTo('cricd-bowler-' + event.data.bowler.id, event);
     }
 });
