@@ -5,8 +5,8 @@ services:
     image: bradleyscott/cricd-entities
     restart: on-failure:10
     environment:
-      - sails_connections__cricdPostgressqlServer__host=entities-db
-      - sails_connections__cricdPostgressqlServer__password=password # Override in production deployments
+      - DB_HOST=entities-db
+      - DB_PASSWORD=password # Override in production deployments
     ports:
       - "1337:1337"
     depends_on:
