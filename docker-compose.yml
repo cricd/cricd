@@ -26,6 +26,13 @@ services:
       - "3000:3000"
     depends_on:
       - eventstore-projections
+  bowler-match-processor:
+    image: bradleyscott/cricd-bowler-match-processor
+    restart: on-failure:10
+    ports:
+      - "3001:3001"
+    depends_on:
+      - eventstore-projections
   eventstore-projections:
     build: ./api/eventstore
     depends_on:
