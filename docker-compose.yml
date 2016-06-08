@@ -1,6 +1,15 @@
 version: '2'
 
 services:
+  event-service:
+    image: ryankscott/cricd-eventservice
+    restart: on-failure:10
+    environment:
+      - EVENTSTORE_IP=eventstore
+    ports:
+      - "4567:4567"
+    depends_on:
+      - eventstore
   entities:
     image: bradleyscott/cricd-entities
     restart: on-failure:10
