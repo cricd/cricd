@@ -1,0 +1,4 @@
+# cricd specific exclusions
+eventstore-data/
+entities-db
+entities-db/

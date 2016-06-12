@@ -1,12 +1,21 @@
 version: '2'
 
 services:
+  event-service:
+    image: ryankscott/cricd-eventservice
+    restart: on-failure:10
+    environment:
+      - EVENTSTORE_IP=eventstore
+    ports:
+      - "4567:4567"
+    depends_on:
+      - eventstore
   entities:
     image: bradleyscott/cricd-entities
     restart: on-failure:10
     environment:
-      - sails_connections__cricdPostgressqlServer__host=entities-db
-      - sails_connections__cricdPostgressqlServer__password=password # Override in production deployments
+      - DB_HOST=entities-db
+      - DB_PASSWORD=password # Override in production deployments
     ports:
       - "1337:1337"
     depends_on:
@@ -17,6 +26,8 @@ services:
     environment:
       - POSTGRES_PASSWORD=password # Override in production deployments
       - POSTGRES_DB=cricd-entities
+    volumes:
+      - ./api/entities-db:/var/lib/postgresql/data
     ports:
       - "5432:5432"
   batsman-innings-processor:
@@ -26,13 +37,22 @@ services:
       - "3000:3000"
     depends_on:
       - eventstore-projections
+  bowler-match-processor:
+    image: bradleyscott/cricd-bowler-match-processor
+    restart: on-failure:10
+    ports:
+      - "3001:3001"
+    depends_on:
+      - eventstore-projections
   eventstore-projections:
-    build: ./api/eventstore
+    build: ./api/eventstore-projections
     depends_on:
       - eventstore
   eventstore:
-    image: adbrowne/eventstore
+    image: eventstore/eventstore
     restart: on-failure:10
+    volumes:
+      - ./api/eventstore-data:/var/lib/eventstore
     ports:
       - "2113:2113"
       - "1113:1113"

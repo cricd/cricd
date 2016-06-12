@@ -1,3 +1,9 @@
 [submodule "entities"]
 	path = entities
 	url = git@github.com:bradleyscott/cricd-entities
+[submodule "api/processors/cricd-batsman-innings-processor"]
+	path = api/processors/cricd-batsman-innings-processor
+	url = https://github.com/bradleyscott/cricd-batsman-innings-processor.git
+[submodule "api/processors/cricd-bowler-match-processor"]
+	path = api/processors/cricd-bowler-match-processor
+	url = https://github.com/bradleyscott/cricd-bowler-match-processor.git
