@@ -1,4 +1,4 @@
 # cricd specific exclusions
-evenstore-data/
+eventstore-data/
 entities-db
 entities-db/
