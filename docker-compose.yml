@@ -26,6 +26,8 @@ services:
     environment:
       - POSTGRES_PASSWORD=password # Override in production deployments
       - POSTGRES_DB=cricd-entities
+    volumes:
+      - ./api/entities-db:/var/lib/postgresql/data
     ports:
       - "5432:5432"
   batsman-innings-processor:
@@ -43,12 +45,14 @@ services:
     depends_on:
       - eventstore-projections
   eventstore-projections:
-    build: ./api/eventstore
+    build: ./api/eventstore-projections
     depends_on:
       - eventstore
   eventstore:
-    image: adbrowne/eventstore
+    image: eventstore/eventstore
     restart: on-failure:10
+    volumes:
+      - ./api/eventstore-data:/var/lib/eventstore
     ports:
       - "2113:2113"
       - "1113:1113"
