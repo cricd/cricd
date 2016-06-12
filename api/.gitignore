@@ -1,0 +1,4 @@
+# cricd specific exclusions
+evenstore-data/
+entities-db
+entities-db/
