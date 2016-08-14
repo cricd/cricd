@@ -1,18 +1,20 @@
 version: '2'
 
 services:
-  event-service:
-    image: ryankscott/cricd-eventservice
+  yml-parser:
+    image: ryankscott/cricd-parser
     restart: on-failure:10
     environment:
       - EVENTSTORE_IP=eventstore
-    ports:
-      - "4567:4567"
+      - ENTITYSTORE_IP=entities
+    volumes:
+      - ./api/game-import:/app/games
     depends_on:
+      - entities
       - eventstore
   entities:
     image: bradleyscott/cricd-entities
-    restart: on-failure:10
+    restart: on-failure:20
     environment:
       - DB_HOST=entities-db
       - DB_PASSWORD=password # Override in production deployments
@@ -29,7 +31,7 @@ services:
       - MYSQL_DATABASE=cricd-entities
       - MYSQL_ROOT_PASSWORD=password # Override in production deployments
     volumes:
-      - ./api/entities-db:/var/lib/postgresql/data
+      - ./api/entities-db:/var/lib/mysql
     ports:
       - "3306:3306"
   batsman-innings-processor:
@@ -44,6 +46,13 @@ services:
     restart: on-failure:10
     ports:
       - "3001:3001"
+    depends_on:
+      - eventstore-projections
+  score-processor:
+    image: bradleyscott/cricd-score-processor
+    restart: on-failure:10
+    ports:
+      - "3002:3002"
     depends_on:
       - eventstore-projections
   eventstore-projections:
