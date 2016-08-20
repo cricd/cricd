@@ -55,6 +55,23 @@ services:
       - "3002:3002"
     depends_on:
       - eventstore-projections
+  change-publisher:
+    image: bradleyscott/cricd-change-publisher
+    restart: on-failure:10
+    ports:
+      - "3100:3100"
+    depends_on:
+      - eventstore-projections
+      - score-processor
+  event-api:
+    image: ryankscott/cricd-event-api
+    restart: on-failure:10
+    ports:
+      - "4567:4567"
+    environment:
+      - EVENTSTORE_IP=eventstore
+    depends_on:
+      - eventstore-projections
   eventstore-projections:
     build: ./api/eventstore-projections
     depends_on:
