@@ -2,7 +2,7 @@ version: '2'
 
 services:
   yml-parser:
-    image: ryankscott/cricd-parser
+    image: cricd/parser
     restart: on-failure:10
     environment:
       - EVENTSTORE_IP=eventstore
@@ -13,7 +13,7 @@ services:
       - entities
       - eventstore
   entities:
-    image: bradleyscott/cricd-entities
+    image: cricd/entities
     restart: on-failure:20
     environment:
       - DB_HOST=entities-db
@@ -35,28 +35,28 @@ services:
     ports:
       - "3306:3306"
   batsman-innings-processor:
-    image: bradleyscott/cricd-batsman-innings-processor
+    image: cricd/batsman-innings-processor
     restart: on-failure:10
     ports:
       - "3000:3000"
     depends_on:
       - eventstore-projections
   bowler-match-processor:
-    image: bradleyscott/cricd-bowler-match-processor
+    image: cricd/bowler-match-processor
     restart: on-failure:10
     ports:
       - "3001:3001"
     depends_on:
       - eventstore-projections
   score-processor:
-    image: bradleyscott/cricd-score-processor
+    image: cricd/score-processor
     restart: on-failure:10
     ports:
       - "3002:3002"
     depends_on:
       - eventstore-projections
   change-publisher:
-    image: bradleyscott/cricd-change-publisher
+    image: cricd/change-publisher
     restart: on-failure:10
     ports:
       - "3100:3100"
@@ -64,7 +64,7 @@ services:
       - eventstore-projections
       - score-processor
   event-api:
-    image: ryankscott/cricd-event-api
+    image: cricd/event-api
     restart: on-failure:10
     ports:
       - "4567:4567"
