@@ -1,0 +1,24 @@
+[submodule "api/entities"]
+	path = api/entities
+	url = git@github.com:cricd/entities.git
+[submodule "api/parser"]
+	path = api/parser
+	url = git@github.com:cricd/parser.git
+[submodule "api/event-api"]
+	path = api/event-api
+	url = git@github.com:cricd/event-api.git
+[submodule "api/processors/score-processor"]
+	path = api/processors/score-processor
+	url = git@github.com:cricd/score-processor.git
+[submodule "api/change-publisher"]
+	path = api/change-publisher
+	url = https://github.com/cricd/change-publisher
+[submodule "api/processors/bowler-match-processor"]
+	path = api/processors/bowler-match-processor
+	url = git@github.com:cricd/bowler-match-processor.git
+[submodule "api/processors/batsman-innings-processor"]
+	path = api/processors/batsman-innings-processor
+	url = git@github.com:cricd/batsman-innings-processor.git
+[submodule "api/processors/next-ball-processor"]
+	path = api/processors/next-ball-processor
+	url = git@github.com:cricd/next-ball-processor.git
