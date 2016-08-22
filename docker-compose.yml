@@ -55,6 +55,15 @@ services:
       - "3002:3002"
     depends_on:
       - eventstore-projections
+  next-ball-processor:
+    image: cricd/next-ball-processor
+    restart: on-failure:10
+    ports:
+      - "3004:3004"
+    depends_on:
+      - eventstore-projections
+      - entities
+      - score-processor
   change-publisher:
     image: cricd/change-publisher
     restart: on-failure:10
