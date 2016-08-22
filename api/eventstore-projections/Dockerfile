@@ -12,6 +12,7 @@ RUN apk add --update curl && \
 
 # Move the projections file to the container
 COPY matchesProjection.js /
+COPY bowlersProjection.js /
 
 # Create projections using the Eventstore RESTapi
 CMD /bin/sh -c "echo 'Waiting for 5 seconds...'; \
