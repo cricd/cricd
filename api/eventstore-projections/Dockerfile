@@ -22,10 +22,4 @@ CMD /bin/sh -c "echo 'Waiting for 5 seconds...'; \
     -i -d @matchesProjection.js \
     --user admin:changeit \
     -H 'Content-Type: application/json;charset=UTF-8'; \
-  echo 'Upload of matches projection complete'; \
-  echo 'Attempting to upload bowlers projection...'; \
-  /usr/bin/curl 'http://eventstore:2113/projections/continuous?name=cricd-bowlers&emit=yes&checkpoints=yes&enabled=yes' \
-    -i -d @bowlersProjection.js \
-    --user admin:changeit \
-    -H 'Content-Type: application/json;charset=UTF-8'; \
-  echo 'Upload of bowlers projection complete';"
+  echo 'Upload of matches projection complete';"
