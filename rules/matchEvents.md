@@ -197,6 +197,19 @@ batsman | object | true | The name and id of the batsman that was timed out
 	match: '1fcf3f76-2cb6-4d69-8b1b-119af72df810',
 	eventType: 'timedOut',
 	timestamp: '2012-04-23T18:25:43.511Z',
+	ball: {
+		battingTeam: {
+			id: '3433b37f-4492-4293-bae3-5bfdc787e9b0',
+			name: 'Macleans College 1st XI'
+		},
+		fieldingTeam: {
+			id: '712454b0-7e13-405b-9fd4-e285b777d4af',
+			name: 'Kings College 1st XI'
+		},
+		innings: 1,
+		over: 1,
+		ball: 3
+	},
 	batsman: {
 		id: '3433b37f-4492-4293-bae3-5bfdc787e9b0',
 		name: 'Bradley S Scott'
