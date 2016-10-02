@@ -3,7 +3,7 @@ version: '2'
 services:
   yml-parser:
     image: cricd/parser
-    restart: on-failure:10
+    restart: always
     environment:
       - EVENTSTORE_IP=eventstore
       - ENTITYSTORE_IP=entities
@@ -14,7 +14,7 @@ services:
       - eventstore
   entities:
     image: cricd/entities
-    restart: on-failure:20
+    restart: always
     environment:
       - DB_HOST=entities-db
       - DB_PASSWORD=password # Override in production deployments
@@ -24,7 +24,7 @@ services:
       - entities-db
   entities-db:
     image: mysql
-    restart: on-failure:10
+    restart: always
     environment:
       - MYSQL_USER=cricd-entities
       - MYSQL_PASSWORD=password # Override in production deployments
@@ -36,28 +36,28 @@ services:
       - "3306:3306"
   batting-processor:
     image: cricd/batting-processor
-    restart: on-failure:10
+    restart: always
     ports:
       - "3000:3000"
     depends_on:
       - eventstore-projections
   bowling-processor:
     image: cricd/bowling-processor
-    restart: on-failure:10
+    restart: always
     ports:
       - "3001:3001"
     depends_on:
       - eventstore-projections
   score-processor:
     image: cricd/score-processor
-    restart: on-failure:10
+    restart: always
     ports:
       - "3002:3002"
     depends_on:
       - eventstore-projections
   next-ball-processor:
     image: cricd/next-ball-processor
-    restart: on-failure:10
+    restart: always
     ports:
       - "3004:3004"
     depends_on:
@@ -66,7 +66,7 @@ services:
       - score-processor
   change-publisher:
     image: cricd/change-publisher
-    restart: on-failure:10
+    restart: always
     ports:
       - "3100:3100"
     depends_on:
@@ -74,7 +74,7 @@ services:
       - score-processor
   event-api:
     image: cricd/event-api
-    restart: on-failure:10
+    restart: always
     ports:
       - "4567:4567"
     environment:
@@ -87,7 +87,7 @@ services:
       - eventstore
   eventstore:
     image: eventstore/eventstore
-    restart: on-failure:10
+    restart: always
     volumes:
       - ./api/eventstore-data:/var/lib/eventstore
     ports:
