@@ -13,12 +13,12 @@
 [submodule "api/change-publisher"]
 	path = api/change-publisher
 	url = https://github.com/cricd/change-publisher
-[submodule "api/processors/bowler-match-processor"]
-	path = api/processors/bowler-match-processor
-	url = git@github.com:cricd/bowler-match-processor.git
-[submodule "api/processors/batsman-innings-processor"]
-	path = api/processors/batsman-innings-processor
-	url = git@github.com:cricd/batsman-innings-processor.git
+[submodule "api/processors/bowling-processor"]
+	path = api/processors/bowling-processor
+	url = git@github.com:cricd/bowling-processor.git
+[submodule "api/processors/batting-processor"]
+	path = api/processors/batting-processor
+	url = git@github.com:cricd/batting-processor.git
 [submodule "api/processors/next-ball-processor"]
 	path = api/processors/next-ball-processor
 	url = git@github.com:cricd/next-ball-processor.git

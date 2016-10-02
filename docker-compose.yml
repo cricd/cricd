@@ -41,8 +41,8 @@ services:
       - "3000:3000"
     depends_on:
       - eventstore-projections
-  bowler-match-processor:
-    image: cricd/bowler-match-processor
+  bowling-processor:
+    image: cricd/bowling-processor
     restart: on-failure:10
     ports:
       - "3001:3001"
