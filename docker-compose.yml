@@ -34,8 +34,8 @@ services:
       - ./api/entities-db:/var/lib/mysql
     ports:
       - "3306:3306"
-  batsman-innings-processor:
-    image: cricd/batsman-innings-processor
+  batting-processor:
+    image: cricd/batting-processor
     restart: on-failure:10
     ports:
       - "3000:3000"
