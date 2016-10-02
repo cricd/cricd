@@ -15,8 +15,8 @@ COPY matchesProjection.js /
 COPY bowlersProjection.js /
 
 # Create projections using the Eventstore RESTapi
-CMD /bin/sh -c "echo 'Waiting for 5 seconds...'; \
-  sleep 5; \
+CMD /bin/sh -c "echo 'Waiting for 30 seconds...'; \
+  sleep 30; \
   echo 'Attempting to upload matches projection...'; \
   /usr/bin/curl 'http://eventstore:2113/projections/continuous?name=cricd-matches&emit=yes&checkpoints=yes&enabled=yes' \
     -i -d @matchesProjection.js \
