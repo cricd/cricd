@@ -79,6 +79,7 @@ services:
       - "4567:4567"
     environment:
       - EVENTSTORE_IP=eventstore
+      - NEXT_BALL_IP=next-ball-processor
     depends_on:
       - eventstore-projections
   eventstore-projections:
