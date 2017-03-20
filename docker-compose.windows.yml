@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  yml-parser:
+    volumes:
+      - /c/Users/bradl/Documents/src/cricd/cricd/api/game-import:/app/games
+  entities-db:
+    volumes:
+      - /c/Users/bradl/Documents/src/cricd/cricd/api/entities-db:/var/lib/mysql
+  eventstore:
+    volumes:
+      - /c/Users/bradl/Documents/src/cricd/cricd/api/eventstore-data:/var/lib/eventstore
