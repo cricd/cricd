@@ -2,13 +2,13 @@ version: '2'
 
 services:
   yml-parser:
-    image: cricd/parser
+    image: cricd/parser-go
     restart: always
     environment:
-      - EVENTSTORE_IP=eventstore
+      - EVENTAPI_IP=event-api
       - ENTITYSTORE_IP=entities
     volumes:
-      - ./api/game-import:/app/games
+      - ./api/game-import:/go/src/app/games
     depends_on:
       - entities
       - eventstore
