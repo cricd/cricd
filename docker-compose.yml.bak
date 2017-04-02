@@ -8,7 +8,7 @@ services:
       - EVENTAPI_IP=event-api
       - ENTITYSTORE_IP=entities
     volumes:
-      - ./api/game-import:/games
+      - ./api/game-import:/go/src/app/games
     depends_on:
       - entities
       - eventstore
