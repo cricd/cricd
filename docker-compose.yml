@@ -37,6 +37,8 @@ services:
   batting-processor:
     image: cricd/batting-processor
     restart: always
+    environment:
+      - DEBUG=*
     ports:
       - "3000:3000"
     depends_on:
@@ -44,6 +46,8 @@ services:
   bowling-processor:
     image: cricd/bowling-processor
     restart: always
+    environment:
+      - DEBUG=*
     ports:
       - "3001:3001"
     depends_on:
@@ -51,6 +55,8 @@ services:
   score-processor:
     image: cricd/score-processor
     restart: always
+    environment:
+      - DEBUG=*
     ports:
       - "3002:3002"
     depends_on:
@@ -58,6 +64,8 @@ services:
   next-ball-processor:
     image: cricd/next-ball-processor
     restart: always
+    environment:
+      - DEBUG=*
     ports:
       - "3004:3004"
     depends_on:
