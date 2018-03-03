@@ -150,7 +150,7 @@ runs | int | false | The number of runs successfully taken by a batting side dur
 }
 ```
 
-#Dismissals
+# Dismissals
 ## Bowled
 ```javascript
 {
