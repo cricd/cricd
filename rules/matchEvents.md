@@ -79,7 +79,8 @@ runs | int | false | The number of runs successfully taken by a batting side. De
 		},
 		innings: 1,
 		over: 1,
-		ball: 3
+		ball: 3,
+		delivery: 3
 	},
 	runs: 4,
 	batsmen: {
@@ -122,7 +123,8 @@ runs | int | false | The number of runs successfully taken by a batting side dur
 		},
 		innings: 1,
 		over: 1,
-		ball: 3
+		ball: 3,
+		delivery: 3
 	},
 	runs: 2,
 	batsmen: {
@@ -170,7 +172,8 @@ runs | int | false | The number of runs successfully taken by a batting side dur
 		},
 		innings: 1,
 		over: 1,
-		ball: 3
+		ball: 3,
+		delivery: 3
 	},
 	batsmen: {
 		striker: {
@@ -210,7 +213,8 @@ batsman | object | true | The name and id of the batsman that was timed out
 		},
 		innings: 1,
 		over: 1,
-		ball: 3
+		ball: 3,
+		delivery: 3
 	},
 	batsman: {
 		id: '3433b37f-4492-4293-bae3-5bfdc787e9b0',
@@ -241,7 +245,8 @@ fielder | object | false | The name and id of the fielder that caught the ball
 		},
 		innings: 1,
 		over: 1,
-		ball: 3
+		ball: 3,
+		delivery: 3
 	},
 	didCross: false,
 	batsmen: {
@@ -282,7 +287,8 @@ fielder | object | false | The name and id of the fielder that caught the ball
 		},
 		innings: 1,
 		over: 1,
-		ball: 3
+		ball: 3,
+		delivery: 3
 	},
 	batsmen: {
 		striker: {
@@ -318,7 +324,8 @@ fielder | object | false | The name and id of the fielder that caught the ball
 		},
 		innings: 1,
 		over: 1,
-		ball: 3
+		ball: 3,
+		delivery: 3
 	},
 	batsmen: {
 		striker: {
@@ -354,7 +361,8 @@ fielder | object | false | The name and id of the fielder that caught the ball
 		},
 		innings: 1,
 		over: 1,
-		ball: 3
+		ball: 3,
+		delivery: 3
 	},
 	batsmen: {
 		striker: {
@@ -390,7 +398,8 @@ fielder | object | false | The name and id of the fielder that caught the ball
 		},
 		innings: 1,
 		over: 1,
-		ball: 3
+		ball: 3,
+		delivery: 3
 	},
 	batsmen: {
 		striker: {
@@ -430,7 +439,8 @@ batsman | object | true | The name and id of the batsman that was timed out
 		},
 		innings: 1,
 		over: 1,
-		ball: 3
+		ball: 3,
+		delivery: 3
 	},
 	batsman: {
 		id: '3433b37f-4492-4293-bae3-5bfdc787e9b0',
@@ -463,7 +473,8 @@ fielder | object | false | The name and id of the fielder that caused the runout
 		},
 		innings: 1,
 		over: 1,
-		ball: 3
+		ball: 3,
+		delivery: 3
 	},
 	runs: 1,
 	batsmen: {
@@ -512,7 +523,8 @@ fielder | object | false | The name and id of the wicketkeeper that performed th
 		},
 		innings: 1,
 		over: 1,
-		ball: 3
+		ball: 3,
+		delivery: 3
 	},
 	batsmen: {
 		striker: {
