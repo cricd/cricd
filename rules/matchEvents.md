@@ -39,6 +39,7 @@ fieldingTeam | object | true | The id and the name of the team who are fielding
 innings | int | true | The innings number. In a test match there would be 4 innings numbered 1 to 4.
 over | int | true | The over number in this innings. Would be no more than 50 for a ODI, no more than 20 for T20 match
 ball | int | true | The ball number in this over. Excluding any extras bowled. No more than 6.
+delivery | int | true | The number of deliveries bowled in this over. Includes extras bowled.
 
 ```javascript
 {
@@ -52,7 +53,8 @@ ball | int | true | The ball number in this over. Excluding any extras bowled. N
 	},
 	innings: 1,
 	over: 1,
-	ball: 3
+	ball: 3,
+	delivery: 3
 }
 ```
 
